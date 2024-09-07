@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.inputgroup {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.2);
+}
+
+span.password-check {
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+span.password-check::before {
+    content: '\u2713'; /* Unicode checkmark symbol */
+    color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+span.valid::before {
+    color: green;
+}
+
+span.invalid {
+    color: red;
+}
+
+span#email-error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2575fc;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inputgroup input, .inputgroup label, .inputgroup button {
+    animation: slideUp 0.5s ease-in-out;
+}
+
+span#email-error {
+    animation: slideUp 0.5s ease-in-out;
+    color: red;
+    font-size: 12px;
+}
+
+/* Additional Password Check Animation */
+.password-check {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .inputgroup {
+        width: 100%;
+        padding: 1rem;
+    }
+}

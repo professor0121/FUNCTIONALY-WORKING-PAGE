@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inputgroup">
+            <label for="" id="email-label">Email</label>
+            <input type="text" id="email-input" placeholder="Pleace Enter a valid email adderess" onkeyup="validatemail();">
+            <span id="email-error"></span>
+
+            <label for="" id="email-pass">Password</label>
+            <input type="text" id="email-password" placeholder="password" onkeyup="validatepassword(this.value);">
+
+            <label for="" id="email-conform-pass">Conform Password</label>
+            <input type="text" id="email-conform-password" placeholder="password" onkeyup="validateconformpassword(this.value);">
+            <span id="conformpasserror"></span>
+
+            <span class="password-check">8 Charactor</span>
+            <span class="password-check">1 Lowercase Charactor</span>
+            <span class="password-check">1 Uppercase Charactor</span>
+            <span class="password-check">1 Numerical Charactor</span>
+            <span class="password-check">1 Special Charector</span>
+            <button id="submit" onclick="login();">submit</button>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+</html>
